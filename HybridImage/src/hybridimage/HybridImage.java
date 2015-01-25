@@ -4,7 +4,6 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.core.CvType;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 
@@ -28,7 +27,7 @@ class HybridImageDemo {
     resultType = ResultType.ShowResult;
     
     final int   LP_GAUSSIAN_SIZE = 0,
-                LP_STD_DEV = 8;
+                LP_STD_DEV = 5;
     
     final int   HP_GAUSSIAN_SIZE = 0,
                 HP_STD_DEV = 7;
@@ -43,7 +42,8 @@ class HybridImageDemo {
     String[] fileNames = new String[] {
       "/resources/images/dog2.jpg", "/resources/images/cat2.jpg",
       "/resources/images/dog3.png", "/resources/images/cat3.png",
-      "/resources/images/marilyn.bmp", "/resources/images/einstein.bmp"
+      "/resources/images/marilyn.bmp", "/resources/images/einstein.bmp",
+      "/resources/images/grassCat.jpg", "/resources/images/grassDog.jpg"
     };
   
     String image1FileName = fileNames[USE_EXAMPLE*2];
@@ -80,7 +80,7 @@ class HybridImageDemo {
     switch(imageAddType) {
         case Add:           Core.add(firstImage, secondImage, result);
                             break;
-        case AddWeighted:   Core.addWeighted(firstImage, .5, secondImage, .5, 0, result);
+        case AddWeighted:   Core.addWeighted(firstImage, .5, secondImage, .5, 25, result);
                             break;
         case BitwiseAnd:    Core.bitwise_and(firstImage, secondImage, result);
                             break;
