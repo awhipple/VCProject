@@ -18,7 +18,7 @@ enum ImageAddType {
 class HybridImageDemo {
   public void run() {
      
-    final int USE_EXAMPLE = 2;  
+    final int USE_EXAMPLE = 4;  
     
     ResultType resultType;
     //resultType = ResultType.ShowFirst;
@@ -43,7 +43,8 @@ class HybridImageDemo {
       "/resources/images/dog2.jpg", "/resources/images/cat2.jpg",
       "/resources/images/dog3.png", "/resources/images/cat3.png",
       "/resources/images/marilyn.bmp", "/resources/images/einstein.bmp",
-      "/resources/images/grassCat.jpg", "/resources/images/grassDog.jpg"
+      "/resources/images/grassCat.jpg", "/resources/images/grassDog.jpg",
+      "/resources/images/elephant.png", "/resources/images/leopard.png"
     };
   
     String image1FileName = fileNames[USE_EXAMPLE*2];
