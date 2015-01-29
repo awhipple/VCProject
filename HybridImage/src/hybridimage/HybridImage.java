@@ -18,7 +18,8 @@ enum ImageAddType {
 class HybridImageDemo {
   public void run() {
      
-    final int USE_EXAMPLE = 4;  
+    final int USE_EXAMPLE = 2;  
+    //final int USE_EXAMPLE = 4;
     
     ResultType resultType;
     //resultType = ResultType.ShowFirst;
@@ -63,21 +64,6 @@ class HybridImageDemo {
     if(HP_FLIP) Core.bitwise_not(secondImage, secondImage);
     Core.add(secondImage, new Scalar(HP_BRIGHTEN, HP_BRIGHTEN, HP_BRIGHTEN), secondImage);
     
-//    Mat kernel = new Mat(5, 5, CvType.CV_32FC1);
-//    float div = 273;
-//    float[] data = {    1/div, 4/div, 7/div, 4/div, 1/div,
-//                        4/div, 16/div, 26/div, 16/div, 4/div,
-//                        7/div, 26/div, 41/div, 26/div, 7/div,
-//                        4/div, 16/div, 26/div, 16/div, 4/div,
-//                        1/div, 4/div, 7/div, 4/div, 1/div };
-//    invertArray(data);
-//    System.out.println(data[7]);
-//    kernel.put(0, 0, data);
-//    Imgproc.filter2D(firstImage, firstImage, 32, kernel);
-    
-//Imgproc.Laplacian(secondImage, secondImage, 16, 3, 1, 0);
-//Core.bitwise_not(secondImage, secondImage);
-    
     switch(imageAddType) {
         case Add:           Core.add(firstImage, secondImage, result);
                             break;
@@ -100,12 +86,6 @@ class HybridImageDemo {
         case ShowResult:    Highgui.imwrite(filename, result);
                             break;
     }
-  }
-  
-  private void invertArray(float[] data) {
-      for(int s = 0; s < data.length; s++) {
-          data[s] = 1 - data[s];
-      }
   }
   
   private Mat loadImage(String fileName) {
